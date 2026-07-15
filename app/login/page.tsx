@@ -21,6 +21,11 @@ export default async function LoginPage({
         {error ? <div className="err">Incorrect username or password.</div> : null}
         <button type="submit">Sign in</button>
       </form>
+      <p style={{ marginTop: 18, fontSize: 12.5 }}>
+        <a href="/privacy" style={{ color: 'var(--muted)' }}>
+          Privacy
+        </a>
+      </p>
     </div>
   );
 }

@@ -4,9 +4,10 @@ import { COOKIE_NAME, expectedToken } from './lib/auth';
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Public: the login page and the login/logout endpoints.
+  // Public: the login page, the login/logout endpoints, and the privacy policy.
   if (
     pathname === '/login' ||
+    pathname === '/privacy' ||
     pathname.startsWith('/api/login') ||
     pathname.startsWith('/api/logout')
   ) {
