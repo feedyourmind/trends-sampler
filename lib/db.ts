@@ -6,7 +6,9 @@ let sql: ReturnType<typeof postgres> | null = null;
 
 export function db() {
   if (!sql) {
-    const url = process.env.DATABASE_URL;
+    // Strip surrounding quotes: some env sources (a quoted value in a .env, or
+    // a dashboard paste) keep the quotes literally, which breaks URL parsing.
+    const url = process.env.DATABASE_URL?.trim().replace(/^["']|["']$/g, '');
     if (!url) throw new Error('DATABASE_URL is not set');
     sql = postgres(url, { prepare: false, idle_timeout: 20, max: 3 });
   }
