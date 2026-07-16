@@ -1,4 +1,4 @@
-# trends-viewer
+# trends-sampler
 
 A small personal tool for keeping qualitative observations about AI-related
 discourse on Reddit. It reads recent posts (title, body, author, subreddit,

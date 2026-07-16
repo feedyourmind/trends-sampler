@@ -1,4 +1,4 @@
-export const metadata = { title: 'Privacy — trends-viewer' };
+export const metadata = { title: 'Privacy — trends-sampler' };
 
 const CONTACT = 'contact@lethalintelligence.ai';
 
@@ -7,7 +7,7 @@ export default function PrivacyPage() {
     <div className="wrap" style={{ maxWidth: 640 }}>
       <header className="site">
         <div>
-          <h1>trends-viewer — privacy</h1>
+          <h1>trends-sampler — privacy</h1>
           <p>Qualitative observations about AI-related discourse.</p>
         </div>
       </header>
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         </p>
 
         <p>
-          trends-viewer is a personal, non-commercial tool operated by an
+          trends-sampler is a personal, non-commercial tool operated by an
           individual developer. It reads publicly available Reddit content (post
           titles, bodies, authors, subreddits, and public metadata) from a small
           list of subreddits and public user profiles via the Reddit Data API,

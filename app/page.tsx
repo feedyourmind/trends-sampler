@@ -25,7 +25,7 @@ export default async function Home({
     <div className="wrap">
       <header className="site">
         <div>
-          <h1>trends-viewer</h1>
+          <h1>trends-sampler</h1>
           <p>Qualitative observations about AI-related discourse.</p>
         </div>
         <form method="post" action="/api/logout">

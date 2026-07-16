@@ -1,4 +1,4 @@
-export const metadata = { title: 'Sign in — trends-viewer' };
+export const metadata = { title: 'Sign in — trends-sampler' };
 
 export default async function LoginPage({
   searchParams,
@@ -8,7 +8,7 @@ export default async function LoginPage({
   const { error } = await searchParams;
   return (
     <div className="login">
-      <h1>trends-viewer</h1>
+      <h1>trends-sampler</h1>
       <p className="sub">Qualitative observations about AI-related discourse.</p>
       <form method="post" action="/api/login">
         <input name="user" placeholder="username" autoComplete="username" autoFocus />
