@@ -26,7 +26,7 @@ export default async function Home({
       <header className="site">
         <div>
           <h1>trends-sampler</h1>
-          <p>Qualitative observations about AI-related discourse.</p>
+          <p>Qualitative observations about AI-related discourse, based on a small sample of curated Reddit posts.</p>
         </div>
         <form method="post" action="/api/logout">
           <button className="logout" type="submit">

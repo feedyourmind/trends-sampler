@@ -2,7 +2,7 @@
   "name": "trends-sampler",
   "version": "0.1.0",
   "private": true,
-  "description": "Qualitative observations about AI-related discourse on Reddit.",
+  "description": "Qualitative observations about AI-related discourse, based on a small sample of curated Reddit posts.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

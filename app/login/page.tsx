@@ -9,7 +9,7 @@ export default async function LoginPage({
   return (
     <div className="login">
       <h1>trends-sampler</h1>
-      <p className="sub">Qualitative observations about AI-related discourse.</p>
+      <p className="sub">Qualitative observations about AI-related discourse, based on a small sample of curated Reddit posts.</p>
       <form method="post" action="/api/login">
         <input name="user" placeholder="username" autoComplete="username" autoFocus />
         <input

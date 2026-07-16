@@ -8,7 +8,7 @@ export default function PrivacyPage() {
       <header className="site">
         <div>
           <h1>trends-sampler — privacy</h1>
-          <p>Qualitative observations about AI-related discourse.</p>
+          <p>Qualitative observations about AI-related discourse, based on a small sample of curated Reddit posts.</p>
         </div>
       </header>
 
