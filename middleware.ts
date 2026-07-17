@@ -4,12 +4,14 @@ import { COOKIE_NAME, expectedToken } from './lib/auth';
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Public: the login page, the login/logout endpoints, and the privacy policy.
+  // Public: the login page, the login/logout endpoints, and the privacy
+  // policy. The cron route does its own CRON_SECRET bearer check.
   if (
     pathname === '/login' ||
     pathname === '/privacy' ||
     pathname.startsWith('/api/login') ||
-    pathname.startsWith('/api/logout')
+    pathname.startsWith('/api/logout') ||
+    pathname.startsWith('/api/cron/')
   ) {
     return NextResponse.next();
   }

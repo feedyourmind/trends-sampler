@@ -48,14 +48,14 @@ export default async function Home({
               ) : (
                 p.title
               )}
-              {p.post_type && p.post_type !== 'text' ? (
-                <span className="tag">{p.post_type}</span>
+              {p.kind && p.kind !== 'text' ? (
+                <span className="tag">{p.kind}</span>
               ) : null}
             </div>
             <div className="meta">
               {p.subreddit ? <span>r/{p.subreddit}</span> : null}
-              {p.username ? <span>u/{p.username}</span> : null}
-              <span>{fmtDate(p.sent_date)}</span>
+              {p.author ? <span>u/{p.author}</span> : null}
+              <span>{fmtDate(p.created_utc)}</span>
               {typeof p.comments === 'number' ? (
                 <span>{p.comments} comments</span>
               ) : null}
