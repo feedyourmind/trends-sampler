@@ -1,6 +1,6 @@
 export const metadata = { title: 'Privacy — trends-sampler' };
 
-const CONTACT = 'contact@lethalintelligence.ai';
+const CONTACT = 'michael@skylitup.com';
 
 export default function PrivacyPage() {
   return (
