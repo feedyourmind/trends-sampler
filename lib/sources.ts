@@ -14,7 +14,7 @@ export const SCHEDULE: Record<number, Source> = {
   5: { type: 'subreddit', name: 'singularity' },
   8: { type: 'subreddit', name: 'agi' },
   11: { type: 'user', name: 'katxwoods' },
-  14: { type: 'user', name: 'FinnFarrow' },
+  14: { type: 'user', name: 'tombibbs' },
   17: { type: 'user', name: 'chillinewman' },
 };
 

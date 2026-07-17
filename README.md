@@ -19,7 +19,7 @@ must match the cron hours in [vercel.json](vercel.json):
 | 05:00    | r/singularity   | `GET /r/singularity/new`           |
 | 08:00    | r/agi           | `GET /r/agi/new`                   |
 | 11:00    | u/katxwoods     | `GET /user/katxwoods/submitted`    |
-| 14:00    | u/FinnFarrow    | `GET /user/FinnFarrow/submitted`   |
+| 14:00    | u/tombibbs      | `GET /user/tombibbs/submitted`     |
 | 17:00    | u/chillinewman  | `GET /user/chillinewman/submitted` |
 
 There is also a save-by-URL endpoint (`POST /api/sample-url`, behind the
