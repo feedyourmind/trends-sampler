@@ -86,6 +86,24 @@ header.site p {
   font-size: 14px;
 }
 
+/* privacy policy */
+.policy {
+  font-size: 14.5px;
+}
+.policy h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 26px 0 6px;
+}
+.policy p {
+  margin: 0 0 12px;
+  line-height: 1.65;
+}
+.policy strong {
+  color: var(--fg);
+}
+
 .pager {
   display: flex;
   justify-content: space-between;
