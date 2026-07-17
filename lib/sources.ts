@@ -10,12 +10,12 @@ export type Source =
 
 // Hour (UTC) -> source. Keep in sync with the cron schedule in vercel.json.
 export const SCHEDULE: Record<number, Source> = {
-  2: { type: 'subreddit', name: 'AIDangers' },
-  5: { type: 'subreddit', name: 'ControlProblem' },
-  8: { type: 'subreddit', name: 'antiai' },
+  2: { type: 'subreddit', name: 'ChatGPT' },
+  5: { type: 'subreddit', name: 'singularity' },
+  8: { type: 'subreddit', name: 'agi' },
   11: { type: 'user', name: 'katxwoods' },
-  14: { type: 'user', name: 'MetaKnowing' },
-  17: { type: 'user', name: 'EchoOfOppenheimer' },
+  14: { type: 'user', name: 'FinnFarrow' },
+  17: { type: 'user', name: 'chillinewman' },
 };
 
 export function sourceForHour(hourUtc: number): Source | null {

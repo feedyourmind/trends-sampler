@@ -13,14 +13,14 @@ instead of bursting — 6 listing requests per day in total, one page
 (`limit=25`) each. The schedule lives in [lib/sources.ts](lib/sources.ts) and
 must match the cron hours in [vercel.json](vercel.json):
 
-| UTC hour | Source            | Request                          |
-| -------- | ----------------- | -------------------------------- |
-| 02:00    | r/AIDangers       | `GET /r/AIDangers/new`           |
-| 05:00    | r/ControlProblem  | `GET /r/ControlProblem/new`      |
-| 08:00    | r/antiai          | `GET /r/antiai/new`              |
-| 11:00    | u/katxwoods       | `GET /user/katxwoods/submitted`  |
-| 14:00    | u/MetaKnowing     | `GET /user/MetaKnowing/submitted`|
-| 17:00    | u/EchoOfOppenheimer | `GET /user/EchoOfOppenheimer/submitted` |
+| UTC hour | Source          | Request                            |
+| -------- | --------------- | ---------------------------------- |
+| 02:00    | r/ChatGPT       | `GET /r/ChatGPT/new`               |
+| 05:00    | r/singularity   | `GET /r/singularity/new`           |
+| 08:00    | r/agi           | `GET /r/agi/new`                   |
+| 11:00    | u/katxwoods     | `GET /user/katxwoods/submitted`    |
+| 14:00    | u/FinnFarrow    | `GET /user/FinnFarrow/submitted`   |
+| 17:00    | u/chillinewman  | `GET /user/chillinewman/submitted` |
 
 There is also a save-by-URL endpoint (`POST /api/sample-url`, behind the
 login) that fetches a single post when one is worth keeping.
