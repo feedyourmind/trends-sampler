@@ -20,7 +20,7 @@ must match the cron hours in [vercel.json](vercel.json):
 | 08:00    | r/agi           | `GET /r/agi/new`                   |
 | 11:00    | u/katxwoods     | `GET /user/katxwoods/submitted`    |
 | 14:00    | u/tombibbs      | `GET /user/tombibbs/submitted`     |
-| 17:00    | u/chillinewman  | `GET /user/chillinewman/submitted` |
+| 17:00    | u/Logical_Welder3467 | `GET /user/Logical_Welder3467/submitted` |
 
 There is also a save-by-URL endpoint (`POST /api/sample-url`, behind the
 login) that fetches a single post when one is worth keeping.

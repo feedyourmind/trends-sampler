@@ -15,7 +15,7 @@ export const SCHEDULE: Record<number, Source> = {
   8: { type: 'subreddit', name: 'agi' },
   11: { type: 'user', name: 'katxwoods' },
   14: { type: 'user', name: 'tombibbs' },
-  17: { type: 'user', name: 'chillinewman' },
+  17: { type: 'user', name: 'Logical_Welder3467' },
 };
 
 export function sourceForHour(hourUtc: number): Source | null {
