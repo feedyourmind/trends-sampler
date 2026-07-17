@@ -1,9 +1,10 @@
 // The curated sample. Each source is polled once per day at a fixed hour
 // (UTC), so requests are spread across the day instead of bursting: currently
-// 12 subreddits and 3 public profiles → roughly 25-30 listing requests per
-// day (subreddit polls may fetch a second page when the first comes back
-// full), plus the occasional save-by-URL. The list rotates over time but
-// stays under ~30 subreddits and ~10 profiles.
+// 12 subreddits and 3 public profiles → a few dozen listing requests per day
+// (a subreddit poll pages deeper — up to 5 pages — only while listings come
+// back full), plus the occasional save-by-URL. The list rotates over time but
+// stays under ~20 subreddits and ~15 profiles, and busy sources may be
+// polled up to a few times per day.
 
 export type Source =
   | { type: 'subreddit'; name: string }

@@ -11,9 +11,10 @@ paginated list behind a single-user login.
 The cron fires hourly, and each hour maps to at most ONE source (see
 [lib/sources.ts](lib/sources.ts)), so the day's work is spread out instead of
 bursting. Currently 12 subreddits and 3 public profiles are scheduled — one
-`limit=25` page each, with a second page for a subreddit only when the first
-comes back full — roughly 25–30 listing requests per day in total. The list
-rotates over time but stays under ~30 subreddits and ~10 profiles.
+`limit=25` page each, paging deeper (up to 5 pages) only while a subreddit's
+listing comes back full — typically a few dozen listing requests per day in
+total. The list rotates over time but stays under ~20 subreddits and ~15
+profiles, and busy sources may be polled up to a few times per day.
 
 Scheduled sources (UTC hour → source):
 
@@ -31,7 +32,7 @@ The client ([lib/reddit.ts](lib/reddit.ts)) is strictly read-only — it never
 posts, comments, votes, or messages. It authenticates as a script-type OAuth
 app, sends a descriptive User-Agent on every request, paces multi-page fetches
 a few seconds apart, and backs off if the `X-Ratelimit-Remaining` header runs
-low (which at ~30 requests/day it never should). Without Reddit credentials
+low (which at a few dozen requests/day it never should). Without Reddit credentials
 configured, the sampler is a no-op.
 
 Data lands in a self-bootstrapping `trends_sampler.posts` table (see

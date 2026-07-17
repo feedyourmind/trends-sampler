@@ -110,10 +110,10 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /**
  * New submissions in a subreddit. Fetches one page; if the page comes back
- * full (an active subreddit), fetches one more so a daily poll doesn't miss
- * posts — never more than MAX_PAGES, with a pause between requests.
+ * full (an active subreddit), fetches more so a daily poll doesn't miss
+ * posts — never more than MAX_PAGES pages, with a pause between requests.
  */
-const MAX_PAGES = 2;
+const MAX_PAGES = 5;
 const PACE_MS = 3000;
 
 export async function fetchSubredditNew(subreddit: string): Promise<SampledPost[]> {
