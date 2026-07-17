@@ -106,11 +106,31 @@ function mapListing(json: any): SampledPost[] {
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-/** New submissions in a subreddit (single page). */
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * New submissions in a subreddit. Fetches one page; if the page comes back
+ * full (an active subreddit), fetches one more so a daily poll doesn't miss
+ * posts — never more than MAX_PAGES, with a pause between requests.
+ */
+const MAX_PAGES = 2;
+const PACE_MS = 3000;
+
 export async function fetchSubredditNew(subreddit: string): Promise<SampledPost[]> {
-  return mapListing(
-    await apiGet(`/r/${subreddit}/new?limit=${PAGE_LIMIT}&raw_json=1`),
-  );
+  const all: SampledPost[] = [];
+  let after: string | null = null;
+  for (let page = 0; page < MAX_PAGES; page++) {
+    if (page > 0) await sleep(PACE_MS);
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    const json: any = await apiGet(
+      `/r/${subreddit}/new?limit=${PAGE_LIMIT}&raw_json=1${after ? `&after=${after}` : ''}`,
+    );
+    const posts = mapListing(json);
+    all.push(...posts);
+    after = json?.data?.after ?? null;
+    if (posts.length < PAGE_LIMIT || !after) break;
+  }
+  return all;
 }
 
 /** A user's public submission history (single page). */

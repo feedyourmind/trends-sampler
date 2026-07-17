@@ -1,21 +1,32 @@
-// The curated sample. Each source is polled ONCE per day, and the runs are
-// spread across the day (one source per scheduled hour, UTC) so the tool
-// never bursts: 6 listing requests per day in total, plus the occasional
-// save-by-URL. That is deliberately a small fraction of what the free tier
-// allows.
+// The curated sample. Each source is polled once per day at a fixed hour
+// (UTC), so requests are spread across the day instead of bursting: currently
+// 12 subreddits and 3 public profiles → roughly 25-30 listing requests per
+// day (subreddit polls may fetch a second page when the first comes back
+// full), plus the occasional save-by-URL. The list rotates over time but
+// stays under ~30 subreddits and ~10 profiles.
 
 export type Source =
   | { type: 'subreddit'; name: string }
   | { type: 'user'; name: string };
 
-// Hour (UTC) -> source. Keep in sync with the cron schedule in vercel.json.
+// Hour (UTC) -> source. The cron in vercel.json fires hourly; hours without
+// an entry are no-ops.
 export const SCHEDULE: Record<number, Source> = {
-  2: { type: 'subreddit', name: 'ChatGPT' },
-  5: { type: 'subreddit', name: 'singularity' },
-  8: { type: 'subreddit', name: 'agi' },
-  11: { type: 'user', name: 'katxwoods' },
-  14: { type: 'user', name: 'tombibbs' },
-  17: { type: 'user', name: 'Logical_Welder3467' },
+  1: { type: 'subreddit', name: 'ChatGPT' },
+  2: { type: 'subreddit', name: 'technology' },
+  4: { type: 'subreddit', name: 'singularity' },
+  5: { type: 'subreddit', name: 'OpenAI' },
+  7: { type: 'subreddit', name: 'agi' },
+  8: { type: 'subreddit', name: 'artificial' },
+  10: { type: 'subreddit', name: 'technews' },
+  11: { type: 'subreddit', name: 'Futurology' },
+  13: { type: 'subreddit', name: 'ArtificialInteligence' },
+  14: { type: 'subreddit', name: 'ClaudeAI' },
+  16: { type: 'subreddit', name: 'Anthropic' },
+  17: { type: 'subreddit', name: 'GeminiAI' },
+  19: { type: 'user', name: 'katxwoods' },
+  20: { type: 'user', name: 'tombibbs' },
+  22: { type: 'user', name: 'Logical_Welder3467' },
 };
 
 export function sourceForHour(hourUtc: number): Source | null {
